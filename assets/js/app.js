@@ -77,42 +77,42 @@ $(document).ready(function() {
 	$('.back-to-top a').click(function(e) {
 		e.preventDefault();
 		$(window).scrollTop(0);
-	})
-  
+	}); // Psychopompos added a semicolon
+
 	// Cover image of the header
 	var $postImage = $('img[alt="cover"]');
 	if ( $postImage.length ) {
 		var postImageURL = $postImage.attr('src');
 		$('.art-header').css('background-image','url(' + postImageURL + ')');
 		$('.art-header').css('background-size','100%');
-		
+
 		// Change color scheme to white
 		$('#logo h1').css('color','white');
 		$('.art-title').css('color','white');
 		$('.art-subtitle').css('color','white');
 		$('.art-time').css('color','white');
 		$('.nav-primary li a').css('color','white');
-		
+
 		// Add Text Shadows
 		$('.art-title').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
 		$('.art-subtitle').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
 		$('.art-time').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
-		
+
 	}
 	$postImage.remove();
-	
+
 	// Subtitles
 	var $subtitle = $('span[id="subtitle"]');
 	if ( $subtitle.length ) {
 		var subtitleText = $('#subtitle').text();
 		$('.art-subtitle').html(subtitleText);
-		
+
 	}
 	$subtitle.remove();
-	
+
 	// Make punctuation smarter
 	jQuery.fn.smarten = (function() {
-	 
+
 	  function smartenNode(node) {
 		if (node.nodeType === 3) {
 		  node.data = node.data
@@ -129,15 +129,15 @@ $(document).ready(function() {
 		  } while (node = node.nextSibling);
 		}
 	  }
-	 
+
 	  return function() {
 		return this.each(function(){
 		  smartenNode(this);
 		});
 	  };
-	 
+
 	}());
-	 
+
 	// Instantiation
 	$('article').smarten();
 
