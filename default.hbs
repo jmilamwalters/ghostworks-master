@@ -42,8 +42,11 @@
   {{! Le CSS Reset : first stylesheet in HEAD }}
   <link rel="stylesheet" href="{{asset "css/reset.css"}}" />
 
-  {{! Le Stylesheets & Favicon }}
+  {{! Le Stylesheets }}
   <link rel="stylesheet" type="text/css" href="{{asset "styl/screen.css"}}" />
+  <link rel="stylesheet" type="text/css" href="{{asset "styl/pop-navigation.css"}}" />
+
+  {{! Le Favicon }}
   <link rel="shortcut icon" type="image/x-icon" href="{{ asset "img/favicon.ico"}}" />
 
   {{! Le IE Shiv }}
@@ -60,7 +63,7 @@
   {{/if}}
 
   {{! Le Modernizr : last, if any, of scripts in HEAD }}
-  <script src="{{asset "js/modernizr.js"}}"></script> <!-- Modernizr -->
+  <script src="{{asset "js/modernizr.js"}}"></script>
 
   {{ghost_head}}
 </head>
@@ -78,10 +81,55 @@
       <ul class="nav-primary">
           {{! TODO: Add URLs here }}
           <li><a href="{{@blog.url}}/events">Events</a></li>
-          <li><a href="{{@blog.url}}/short-courses">Home</a>Short Courses</li>
+          <li><a href="{{@blog.url}}/short-courses">Short Courses</a></li>
           <li><a href="{{@blog.url}}/extended-workshops">Workshops</a></li>
           <li><a href="{{@blog.url}}/contact">Contact</a></li>
       </ul>
+  </nav>
+
+  {{! Pop Navigation }}
+  <header class="cd-header">
+{{!--
+    <nav>
+      <ul class="cd-secondary-nav">
+        <li><a href="#0">Contact</a></li>
+        <li><a href="#0">Register</a></li>
+      </ul>
+    </nav> <!-- cd-nav -->
+--}}
+    <a class="cd-primary-nav-trigger" href="#0">
+      <span class="cd-menu-text">Menu</span><span class="cd-menu-icon"></span>
+    </a> <!-- cd-primary-nav-trigger -->
+  </header>
+
+  <nav>
+    <ul class="cd-primary-nav">
+
+      <li class="cd-label">Discover</li>
+
+      <li><a class="pop-nav-link" href="#0">The team</a></li>
+      <li><a class="pop-nav-link" href="#0">Our services</a></li>
+      <li><a class="pop-nav-link" href="#0">Our projects</a></li>
+
+      <li class="cd-label">Explore</li>
+
+      <li><a class="pop-nav-link" href="#0">Start a project</a></li>
+      <li><a class="pop-nav-link" href="#0">Join In</a></li>
+      <li><a class="pop-nav-link" href="#0">Create an account</a></li>
+
+      <li class="cd-label">Create</li>
+
+      <li><a class="pop-nav-link" href="#0">Start a project</a></li>
+      <li><a class="pop-nav-link" href="#0">Join In</a></li>
+      <li><a class="pop-nav-link" href="#0">Create an account</a></li>
+
+      <li class="cd-label">Connect</li>
+
+      <li class="cd-social cd-facebook"><a href="#0">Facebook</a></li>
+      <li class="cd-social cd-twitter"><a href="#0">Twitter</a></li>
+      <li class="cd-social cd-instagram"><a href="#0">Instagram</a></li>
+
+    </ul>
   </nav>
 
   {{! Everything else gets inserted here }}
@@ -100,11 +148,15 @@
 
   </div> {{! End of wrapper }}
 
-  {{! Scripts }}
+  {{! Scripts : Bentley }}
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="{{ asset 'js/fittext.js' }}"></script>
   <script type="text/javascript" src="{{ asset 'js/app.js' }}"></script>
   <script type="text/javascript" src="{{ asset 'js/respond.min.js' }}"></script>
+
+  {{! Scripts : Pop Navigation }}
+  <script type="text/javascript" src="{{ asset 'js/jquery-2.1.1.js' }}"></script>
+  <script type="text/javascript" src="{{ asset 'js/pop-navigation.js' }}"></script>
 
   {{! Google Analytics }}
   <script type="text/javascript">

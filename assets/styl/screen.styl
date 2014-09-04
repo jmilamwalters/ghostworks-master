@@ -3,6 +3,19 @@
 @import url(http://fonts.googleapis.com/css?family=Questrial)
 @import url(http://fonts.googleapis.com/css?family=Lora)
 
+/* Variables : Colors
+================================================== */
+glassworks-black  = #000000
+glassworks-white  = #FFFFFF
+glassworks-hot    = #FF9E9D
+glassworks-warm   = #FF3D7F
+glassworks-cold   = #3FB8AF
+glassworks-cool   = #7FC7AF
+leshalles-pink    = #E5007C
+leshalles-blue    = #00AECA
+leshalles-green   = #AECA00
+bentley-red       = #F40034
+
 /* Reset & Basics (Inspired by E. Meyers)
 ================================================== */
 html,
@@ -98,8 +111,7 @@ body
   overflow-x: hidden
   font: 17px/28px ff-meta-serif-web-pro, "Lora", "Georgia", serif
   color: #333
-  background: #fff
-  font-family: "Lora"
+  background: glassworks-white
 
 /* Typography
 ================================================== */
@@ -166,20 +178,20 @@ header#teaser h1
 /* Links
 ================================================== */
 a
-  color: #F40034
+  color: bentley-red
   text-decoration: none
   -webkit-transition: color .2s ease-in-out
   -moz-transition: color .2s ease-in-out
   transition: color .2s ease-in-out
 
 a:hover
-  color: #F40034
+  color: bentley-red
 
 /*  Layout
 ================================================== */
 /* White container that is the "page" */
 .wrapper
-  max-width: 1500px
+/*  max-width: 1500px */
   margin: 0 auto
   background: #fff
 
@@ -212,7 +224,7 @@ a:hover
   margin-left: -490px
   /* Half width of nav */
   border-bottom: 1px solid #333
-  z-index: 2
+  z-index: 400
 
 .nav.fixed
   position: fixed
@@ -246,7 +258,7 @@ a:hover
   font-size: 30px
 
 #logo h1 span
-  color: #F40034 !important
+  color: bentley-red !important
 
 .nav li:first-child
   margin-left: 0
@@ -329,7 +341,7 @@ div.cover > img
   box-shadow: 0 -3px 3px rgba(0,0,0,.2)
 
 .art-body-inner
-  font-family: Georgia,Cambria,"Times New Roman",Times,serif
+  font-family: "Lora", "Cambria", "Georgia", serif
   max-width: 640px
   padding: 80px 0 50px
   letter-spacing: 0.01rem
@@ -339,7 +351,7 @@ div.cover > img
   line-height: 1.5
 
 .art-body-inner a:hover
-  border-bottom: 1px solid #F40034
+  border-bottom: 1px solid bentley-red
   padding-bottom: 2px
 
 .art-body-inner ul,
@@ -458,7 +470,7 @@ div.cover > img
   color: #000
 
 .art-list-title a:hover
-  color: #F40034
+  color: bentley-red
 
 .art-list-item p
   width: 65%
@@ -503,10 +515,10 @@ div.cover > img
   text-align: right
 
 .footer .twitter-link:hover
-  color: #0084B4
+  color: leshalles-blue
 
 .footer .instagram-link:hover
-  color: #3F729B
+  color: leshalles-green
 
 .footer .github-link:hover
   color: #c5376d
@@ -515,7 +527,7 @@ div.cover > img
   color: black
 
 .footer .rss-link:hover
-  color: #e85d24
+  color: bentley-red
 
 /* Remove prev & next links on loop */
 .art-list + .footer .footer-nav,
@@ -626,22 +638,22 @@ tt
 @media only screen and (max-width: 1080px)
   /* Set all of the 980 containers to flexible width */
   .nav,
-.art-body-inner,
-.art-header-inner,
-.footer,
-.art-list,
-.abt,
-.fourohfour
+  .art-body-inner,
+  .art-header-inner,
+  .footer,
+  .art-list,
+  .abt,
+  .fourohfour
     width: 90%
 
   .nav,
-.art-header-inner
+  .art-header-inner
     margin-left: -45%
 
 @media only screen and (max-width: 1024px)
   /* Everything becomes scrolling and non-fading */
   .nav,
-.nav.fixed
+  .nav.fixed
     position: relative
     opacity: 1 !important
     /* Important to override JS values */
@@ -678,14 +690,14 @@ tt
 
 @media only screen and (max-width: 780px)
   .art-body-inner ul,
-.art-body-inner ol
+  .art-body-inner ol
     margin-left: 20px
 
   .art-title
     letter-spacing: 0
 
   .art-subtitle,
-.art-time
+  .art-time
     font-size: 12px
 
   .nav
@@ -693,7 +705,7 @@ tt
     height: 55px
 
   .art-list-item-title-and-time,
-.art-list-item p
+  .art-list-item p
     float: none
     width: auto
     margin-left: 0
@@ -733,7 +745,7 @@ tt
     padding: 10px 0 20px
 
   .back-to-top,
-.footer-nav
+  .footer-nav
     width: 50%
 
   .back-to-top
