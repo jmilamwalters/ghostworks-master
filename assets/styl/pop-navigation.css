@@ -17,7 +17,7 @@ Primary style
 }
 body {
   font-size: 100%;
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
+  font-family: "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif;
   color: rgba(2,23,37,0.7);
   background-color: #fff;
 }
@@ -26,8 +26,11 @@ body.overflow-hidden {
   overflow: hidden;
 }
 a {
-  color: #000;
+  color: #00aeca;
   text-decoration: none;
+}
+a:hover {
+  color: #e5007c;
 }
 a.pop-nav-link {
   color: #fff;
@@ -109,7 +112,7 @@ body {
   }
   .cd-header.menu-is-open {
 /* add a background color to the header when the navigation is open */
-    background-color: rgba(255,61,127,0.96);
+    background-color: rgba(229,0,124,0.95);
   }
 }
 .cd-logo {
@@ -172,7 +175,7 @@ body {
   color: #000;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
+  font-family: "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif;
 /* hide the text on small devices */
   display: none;
 }
@@ -274,7 +277,7 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  background: rgba(255,61,127,0.96);
+  background: rgba(229,0,124,0.95);
   z-index: 200;
   text-align: center;
   padding: 50px 0;
@@ -313,10 +316,10 @@ body {
   transition: background 0.2s;
 }
 .no-touch .cd-primary-nav a:hover {
-  background-color: #7fc7af;
+  background-color: #00aeca;
 }
 .cd-primary-nav .cd-label {
-  color: #ce0200;
+  color: #000;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;

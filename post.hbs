@@ -2,13 +2,15 @@
 {{#post}}
 
 <article class="art simple {{post_class}}">
-    
+
     <header class="art-header">
+       <div class="art-header-overlay">
         <div class="art-header-inner" style="margin-top: 0px; opacity: 1;">
             <time class="art-time">{{date published_at format="MMMM Do, YYYY"}}</time>
             <h2 class="art-title">{{title}}</h2>
             <p class="art-subtitle"></p>
         </div>
+      </div>
     </header>
 
     <div class="art-body">
@@ -17,9 +19,13 @@
             <hr class="featured-article" />
             {{else}}{{/if}}
             {{content}}
+            {{> social}}
         </div>
     </div>
 
 </article>
 
 {{/post}}
+
+{{> footer}}
+{{> copyright}}

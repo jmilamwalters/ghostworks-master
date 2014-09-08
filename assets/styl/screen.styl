@@ -1,5 +1,5 @@
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans)
+@import url(http://fonts.googleapis.com/css?family=Open\+Sans)
 @import url(http://fonts.googleapis.com/css?family=Questrial)
 @import url(http://fonts.googleapis.com/css?family=Lora)
 
@@ -14,7 +14,20 @@ glassworks-cool   = #7FC7AF
 leshalles-pink    = #E5007C
 leshalles-blue    = #00AECA
 leshalles-green   = #AECA00
-bentley-red       = #F40034
+// bentley-red       = #F40034
+bentley-red       = leshalles-pink
+
+
+glassworks-hot-light  = rgba(255, 61, 127, 0.96)
+
+/* Variables : Elements
+================================================== */
+glassworks-border-top-color   = leshalles-blue
+
+/* Variables : Typography
+================================================== */
+glassworks-sans       = "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif
+glassworks-serif      = "FF-Meta-Serif-Web-Pro", "Lora", "Georgia", serif
 
 /* Reset & Basics (Inspired by E. Meyers)
 ================================================== */
@@ -189,11 +202,14 @@ a:hover
 
 /*  Layout
 ================================================== */
+header
+  border-top: glassworks-border-top-color solid 9px
+
 /* White container that is the "page" */
 .wrapper
 /*  max-width: 1500px */
   margin: 0 auto
-  background: #fff
+  background: glassworks-white
 
 /* Containers to keep content to a set width */
 .nav,
@@ -207,6 +223,7 @@ a:hover
 .nav,
 .art-body-inner,
 .footer,
+.copyright,
 .art-list,
 .abt,
 .fourohfour
@@ -215,6 +232,11 @@ a:hover
 
 /*  Nav
 ================================================== */
+nav
+  &.nav
+    padding-top 70px
+    padding-bottom 3em
+
 .nav
   position: absolute
   top: 0
@@ -234,6 +256,7 @@ a:hover
 
 .nav-primary
   float: right
+  padding-top: 2em
 
 .nav-primary li
   display: inline-block
@@ -243,11 +266,11 @@ a:hover
 #logo h1,
 .nav-primary li,
 .nav-primary li a
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif
+  font-family: glassworks-sans
   font-weight: 700
   font-size: 13px
   line-height: 30px
-  color: #000
+  color: glassworks-black
   text-transform: uppercase
 
 #logo h1
@@ -271,7 +294,7 @@ div#home
 #home > div.cover
   max-width: 980px
   margin: 0px auto
-  /*padding-top: 110px;*/
+  padding-top: 110px;
 
 div.cover
 
@@ -291,6 +314,14 @@ div.cover > img
   background-position: top center
   background-attachment: fixed
   overflow: hidden
+  background-color: leshalles-blue
+  z-index: 10
+
+.art-header-overlay
+  background: url('../img/overlay.png') repeat-x;
+  display: block;
+  min-height: 900px;
+  width: 100%;
 
 /* Contains the time, title and subtitle for an article */
 .art-header-inner
@@ -309,6 +340,7 @@ div.cover > img
   font-size: 14px
   line-height: 1.8
   letter-spacing: 4px
+  font-family: glassworks-serif
 
 .art-title
   font-size: 100px
@@ -321,6 +353,7 @@ div.cover > img
   font-size: 14px
   line-height: 1.3
   letter-spacing: 4px
+  font-family: glassworks-serif
 
 /* If small header, make few adjustments */
 .small .art-title
@@ -460,6 +493,7 @@ div.cover > img
   margin-bottom: 10px
 
 .art-list-time
+  font-family: glassworks-serif
   font-size: 12px
   line-height: 20px
   letter-spacing: 2px
@@ -480,25 +514,101 @@ div.cover > img
   font-size: 16px
   line-height: 24px
 
-/*  Footer
+/*  Social Icons
 ================================================== */
-.footer
-  padding: 30px 0 40px
-  overflow: hidden
-  border-top: 1px solid #ccc
+@font-face
+  font-family: 'resonance'
+  src: url("../fonts/resonance.eot?-rrlbos")
+  src: url("../fonts/resonance.eot?#iefix-rrlbos") format("embedded-opentype"), url("../fonts/resonance.woff?-rrlbos") format("woff"), url("../fonts/resonance.ttf?-rrlbos") format("truetype"), url("../fonts/resonance.svg?-rrlbos#resonance") format("svg")
+  font-weight: normal
+  font-style: normal
+[class^="icon-"], [class*=" icon-"]
+  font-family: 'resonance'
+  speak: none
+  font-style: normal
+  font-weight: normal
+  font-variant: normal
+  text-transform: none
+  line-height: 1
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+.icon
+  &--small
+    font-size: 2em
+  &--googleplus:before
+    content: "\e600"
+  &--facebook:before
+    content: "\e601"
+  &--twitter:before
+    content: "\e602"
+  &--rss:before
+    content: "\e603"
+  &--nav:before
+    content: "\e604"
 
-.footer,
-.footer a
+/*  Social Styling
+================================================== */
+.social
+  border-top-width: 0.15rem
+  border-top-style: solid
+  padding-top: 1.55rem
+  border-bottom-width: 0.05rem
+  border-bottom-style: solid
+  padding-bottom: 1.65rem
+  margin-bottom: 1.7rem
+  border-color: #d9d9d9
+
+.social-title
+  line-height: 1.275rem
+  letter-spacing: .3em
+  margin-bottom: 1.7rem
+  font-weight: 200
+
+a
+  &.social-icon
+    &:hover
+      border-bottom 0
+
+/*  Glassworks Footer
+================================================== */
+.glassworks-footer
+  background-color: leshalles-blue
+  padding: 30px 0 24px
+  overflow: hidden
+  border-top: leshalles-pink solid 6px
+
+.glassworks-footer h6,
+.glassworks-footer p
+  color: glassworks-white
+
+.glassworks-footer a
+  color: glassworks-black
+
+.glassworks-footer a:hover
+  color: leshalles-pink
+  text-decoration: underline
+
+/*  Copyright
+================================================== */
+.copyright
+  padding-top: 1em
+  padding-bottom: 1em
+  overflow: hidden
+  background-color: glassworks-black
+
+.copyright,
+.copyright a
   font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif
   font-size: 13px
   text-transform: uppercase
-  color: #777
+  color: glassworks-white
 
-.footer a:hover
-  color: #000
+.copyright a:hover
+  color: leshalles-pink
 
 .back-to-top,
-.footer-nav,
+.copyright-nav,
 .offsite-links
   width: 45%
   float: left
@@ -508,7 +618,7 @@ div.cover > img
   float: left
   text-align: center
 
-.footer-nav
+.copyright-nav
   text-align: center
 
 .offsite-links
@@ -517,26 +627,27 @@ div.cover > img
 .footer .twitter-link:hover
   color: leshalles-blue
 
-.footer .instagram-link:hover
+.copyright .instagram-link:hover
   color: leshalles-green
 
-.footer .github-link:hover
+.copyright .github-link:hover
   color: #c5376d
 
-.footer .caffein8-link:hover
+.copyright .caffein8-link:hover
   color: black
 
-.footer .rss-link:hover
+.copyright .rss-link:hover
   color: bentley-red
 
 /* Remove prev & next links on loop */
-.art-list + .footer .footer-nav,
-.abt + .footer .footer-nav
+.art-list + .copyright .copyright-nav,
+.abt + .copyright .copyright-nav
   text-indent: -9999px
   text-align: left
 
 /*  White Reverse Theme
 ================================================== */
+
 /* Nav */
 .nav.white
   border-bottom-color: #fff
@@ -599,6 +710,21 @@ nav.pagination
 .fourohfour
   padding: 240px 0 100px
   text-align: center
+
+/*  Google Maps
+================================================== */
+.google-maps
+  position relative
+  padding-bottom 75%
+  // This is the aspect ratio
+        height 0
+  overflow hidden
+  iframe
+    position absolute
+    top 0
+    left 0
+    width 100% !important
+    height 100% !important
 
 /*  Code
 ================================================== */
@@ -846,4 +972,3 @@ hr.featured-article:after
   font-size: 1.2em
   padding: 0 0.6em
   background: white
-

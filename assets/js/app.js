@@ -79,8 +79,8 @@ $(document).ready(function() {
 		$(window).scrollTop(0);
 	}); // Psychopompos added a semicolon
 
-	// Cover image of the header
-	var $postImage = $('img[alt="cover"]');
+	// Cover image of the header, re: dark photos (Update: all photos now "dark," whereas "art-header-overlay" implemented)
+	var $postImage = $('img[alt="cover"]'); // Psychopomp : added "-dark" to "cover" to test
 	if ( $postImage.length ) {
 		var postImageURL = $postImage.attr('src');
 		$('.art-header').css('background-image','url(' + postImageURL + ')');
@@ -92,6 +92,7 @@ $(document).ready(function() {
 		$('.art-subtitle').css('color','white');
 		$('.art-time').css('color','white');
 		$('.nav-primary li a').css('color','white');
+    $('.nav').css('border-bottom','white solid 1px');
 
 		// Add Text Shadows
 		$('.art-title').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
@@ -100,6 +101,27 @@ $(document).ready(function() {
 
 	}
 	$postImage.remove();
+
+// BEGIN PSYCHOPOMP TESTING
+//
+//  // Cover image of the header, re: light photos
+//  var $postImageLight = $('img[alt="cover-light"]'); // Psychopomp : added "-light" to "cover" to test
+//  if ( $postImageLight.length ) {
+//    var postImageLightURL = $postImageLight.attr('src');
+//    $('.art-header').css('background-image','url(' + postImageLightURL + ')');
+//    $('.art-header').css('background-size','100%');
+//
+//    // Change color scheme to black
+//    $('#logo h1').css('color','black');
+//    $('.art-title').css('color','black');
+//    $('.art-subtitle').css('color','black');
+//    $('.art-time').css('color','black');
+//    $('.nav-primary li a').css('color','black');
+//
+//  }
+//  $postImageLight.remove();
+//
+// END PSYCHOPOMP TESTING
 
 	// Subtitles
 	var $subtitle = $('span[id="subtitle"]');

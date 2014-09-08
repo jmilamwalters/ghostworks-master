@@ -42,6 +42,9 @@
   {{! Le CSS Reset : first stylesheet in HEAD }}
   <link rel="stylesheet" href="{{asset "css/reset.css"}}" />
 
+  {{! Bootstrap Grid Only }}
+  <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.css"}}" />
+
   {{! Le Stylesheets }}
   <link rel="stylesheet" type="text/css" href="{{asset "styl/screen.css"}}" />
   <link rel="stylesheet" type="text/css" href="{{asset "styl/pop-navigation.css"}}" />
@@ -71,29 +74,13 @@
 <body class="{{body_class}}">
   <div class="wrapper">
 
-  {{! Menu }}
-  {{#if post}}
-    <nav class="nav fixed">
-  {{else}}
-    <nav class="nav">
-  {{/if}}
-      <a style="border:none;" id="logo" href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
-      <ul class="nav-primary">
-          {{! TODO: Add URLs here }}
-          <li><a href="{{@blog.url}}/events">Events</a></li>
-          <li><a href="{{@blog.url}}/short-courses">Short Courses</a></li>
-          <li><a href="{{@blog.url}}/extended-workshops">Workshops</a></li>
-          <li><a href="{{@blog.url}}/contact">Contact</a></li>
-      </ul>
-  </nav>
-
   {{! Pop Navigation }}
   <header class="cd-header">
 {{!--
     <nav>
       <ul class="cd-secondary-nav">
-        <li><a href="#0">Contact</a></li>
-        <li><a href="#0">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#location">Location</a></li>
       </ul>
     </nav> <!-- cd-nav -->
 --}}
@@ -107,21 +94,23 @@
 
       <li class="cd-label">Discover</li>
 
-      <li><a class="pop-nav-link" href="#0">The team</a></li>
-      <li><a class="pop-nav-link" href="#0">Our services</a></li>
-      <li><a class="pop-nav-link" href="#0">Our projects</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/visitors-and-events">Free Daily Demonstrations</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/short-courses">Hands-On Two-Hour Short Courses</a></li>
 
       <li class="cd-label">Explore</li>
 
-      <li><a class="pop-nav-link" href="#0">Start a project</a></li>
-      <li><a class="pop-nav-link" href="#0">Join In</a></li>
-      <li><a class="pop-nav-link" href="#0">Create an account</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/gallery">Tax-Free Gallery</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/visitors-and-events">Visitors + Events</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/wine-and-design">Wine + Design</a></li>
 
       <li class="cd-label">Create</li>
 
-      <li><a class="pop-nav-link" href="#0">Start a project</a></li>
-      <li><a class="pop-nav-link" href="#0">Join In</a></li>
-      <li><a class="pop-nav-link" href="#0">Create an account</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/extended-courses">Extended Courses</a></li>
+
+      <li class="cd-label">Engage</li>
+
+      <li><a class="pop-nav-link" href="{{@blog.url}}/extended-courses">News</a></li>
+      <li><a class="pop-nav-link" href="{{@blog.url}}/contact">Contact</a></li>
 
       <li class="cd-label">Connect</li>
 
@@ -132,19 +121,27 @@
     </ul>
   </nav>
 
+  {{! Desktop Navigation }}
+  {{#if post}}
+    <nav class="nav fixed">
+  {{else}}
+    <nav class="nav">
+  {{/if}}
+      <a style="border:none;" id="logo" href="{{@blog.url}}"><h1>{{@blog.title}}</h1></a>
+      <ul class="nav-primary">
+          {{! TODO: Add URLs here }}
+          <li><a href="{{@blog.url}}/short-courses">Short Courses</a></li>
+          <li><a href="{{@blog.url}}/wine-and-design">Wine + Design</a></li>
+          <li><a href="{{@blog.url}}/extended-courses">Extended Courses</a></li>
+          <li><a href="{{@blog.url}}/visitors-and-events">Visitors + Events</a></li>
+          <li><a href="{{@blog.url}}/commissions">Commissions</a></li>
+          <li><a href="{{@blog.url}}">News</a></li>
+          <li><a href="{{@blog.url}}/contact">Contact</a></li>
+      </ul>
+  </nav>
+
   {{! Everything else gets inserted here }}
   {{{body}}}
-
-  <footer class="footer">
-      <div class="back-to-top"><a href="">Back to top</a></div>
-      {{!-- <div class="footer-nav"><p><a href="{{@blog.url}}/events">Events</a> | <a href="{{@blog.url}}/short-courses">Hands-On</a> | <a href="{{@blog.url}}/extended-workshops">Workshops</a> | <a href="{{@blog.url}}/contact">Contact</a></p></div> --}}
-      <div class="psi">&Psi;</div>
-      <aside class="offsite-links">
-          <a class="twitter-link" href="{{! TODO: ADD TWITTER URL HERE }}">Twitter</a> /
-      		<a class="instagram-link" href="{{! TODO: ADD INSTAGRAM URL HERE }}">Instagram</a> /
-          <a class="rss-link" href="{{ @blog.url }}/rss">RSS</a>
-      </aside>
-  </footer>
 
   </div> {{! End of wrapper }}
 
@@ -157,6 +154,9 @@
   {{! Scripts : Pop Navigation }}
   <script type="text/javascript" src="{{ asset 'js/jquery-2.1.1.js' }}"></script>
   <script type="text/javascript" src="{{ asset 'js/pop-navigation.js' }}"></script>
+
+  {{! Scripts : Pop Navigation }}
+  <script type="text/javascript" src="{{ asset 'js/bootstrap.js' }}"></script>
 
   {{! Google Analytics }}
   <script type="text/javascript">

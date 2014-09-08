@@ -4,20 +4,26 @@ Variables
 
 -------------------------------- */
 
+bentley-red           = #F40034
+
 glassworks-black      = #000000
 glassworks-white      = #FFFFFF
 glassworks-hot        = #FF9E9D
-glassworks-hot-light  = rgba(255, 61, 127, 0.96)
+glassworks-hot-light  = rgba(255, 61, 127, 0.95)
 glassworks-warm       = #FF3D7F
 glassworks-cold       = #3FB8AF
 glassworks-cool       = #7FC7AF
+
 leshalles-pink        = #E5007C
+leshalles-pink-light  = rgba(229, 0, 124, 0.95)
 leshalles-blue        = #00AECA
 leshalles-green       = #AECA00
-bentley-red           = #F40034
 
-glassworks-sans       = "proxima-nova", "helvetica neue", "helvetica", sans-serif
-glassworks-serif      = "ff-meta-serif-web-pro", "Lora", "Georgia", serif
+glassworks-link-color       = leshalles-blue
+glassworks-link-hover-color = leshalles-pink
+
+glassworks-sans       = "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif
+glassworks-serif      = "FF-Meta-Serif-Web-Pro", "Lora", "Georgia", serif
 
 /* --------------------------------
 
@@ -42,8 +48,11 @@ body.overflow-hidden
   overflow: hidden
 
 a
-  color: glassworks-black
+  color: glassworks-link-color
   text-decoration: none
+
+a:hover
+  color: glassworks-link-hover-color
 
 a.pop-nav-link
   color: glassworks-white
@@ -124,7 +133,7 @@ body
 
   .cd-header.menu-is-open
     /* add a background color to the header when the navigation is open */
-    background-color: glassworks-hot-light
+    background-color: leshalles-pink-light
 
 .cd-logo
   display: block
@@ -286,7 +295,7 @@ body
   top: 0
   height: 100%
   width: 100%
-  background: glassworks-hot-light
+  background: leshalles-pink-light
   z-index: 200
   text-align: center
   padding: 50px 0
@@ -325,10 +334,10 @@ body
   transition: background 0.2s
 
 .no-touch .cd-primary-nav a:hover
-  background-color: glassworks-cool
+  background-color: leshalles-blue
 
 .cd-primary-nav .cd-label
-  color: darken(glassworks-hot, 50%)
+  color: glassworks-black
   text-transform: uppercase
   font-weight: 700
   font-size: 14px
