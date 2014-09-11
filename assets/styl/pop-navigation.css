@@ -1,8 +1,7 @@
-/* --------------------------------
-
-Variables
-
--------------------------------- */
+/* Variables : Colors
+================================================== */
+/* Variables : Typography
+================================================== */
 /* --------------------------------
 
 Primary style
@@ -17,8 +16,8 @@ Primary style
 }
 body {
   font-size: 100%;
-  font-family: "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif;
-  color: rgba(2,23,37,0.7);
+  font-family: "Merriweather Sans", "Helvetica Neue", "Helvetica", sans-serif;
+  color: #000;
   background-color: #fff;
 }
 body.overflow-hidden {
@@ -26,11 +25,11 @@ body.overflow-hidden {
   overflow: hidden;
 }
 a {
-  color: #00aeca;
+  color: #3a81cf;
   text-decoration: none;
 }
 a:hover {
-  color: #e5007c;
+  color: #ff46b7;
 }
 a.pop-nav-link {
   color: #fff;
@@ -64,7 +63,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(2,23,37,0.95);
+  background: rgba(2,23,37,0.96);
   height: 50px;
   width: 100%;
   z-index: 300;
@@ -97,7 +96,7 @@ body {
 /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
     top: -80px;
-/* background-color: glassworks-hot-light */
+    background-color: rgba(34,76,122,0.96);
     -webkit-transition: -webkit-transform 0.3s;
     -moz-transition: -moz-transform 0.3s;
     transition: transform 0.3s;
@@ -112,7 +111,7 @@ body {
   }
   .cd-header.menu-is-open {
 /* add a background color to the header when the navigation is open */
-    background-color: rgba(229,0,124,0.95);
+    background-color: #224c7a;
   }
 }
 .cd-logo {
@@ -154,7 +153,7 @@ body {
 }
 .cd-secondary-nav a {
   display: inline-block;
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -169,13 +168,13 @@ body {
   top: 0;
   height: 100%;
   width: 50px;
-  background-color: #03263d;
+  background-color: #fff;
 }
 .cd-primary-nav-trigger .cd-menu-text {
-  color: #000;
+  color: #fff;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif;
+  font-family: "Merriweather Sans", "Helvetica Neue", "Helvetica", sans-serif;
 /* hide the text on small devices */
   display: none;
 }
@@ -194,7 +193,7 @@ body {
   transform: translateX(-50%) translateY(-50%);
   width: 18px;
   height: 2px;
-  background-color: #000;
+  background-color: #fff;
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -206,7 +205,7 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: #000;
+  background-color: #fff;
   right: 0;
   -webkit-transition: -webkit-transform 0.3s, top 0.3s, background-color 0s;
   -moz-transition: -moz-transform 0.3s, top 0.3s, background-color 0s;
@@ -277,7 +276,7 @@ body {
   top: 0;
   height: 100%;
   width: 100%;
-  background: rgba(229,0,124,0.95);
+  background: rgba(34,76,122,0.96);
   z-index: 200;
   text-align: center;
   padding: 50px 0;
@@ -316,10 +315,10 @@ body {
   transition: background 0.2s;
 }
 .no-touch .cd-primary-nav a:hover {
-  background-color: #00aeca;
+  background-color: #3a81cf;
 }
 .cd-primary-nav .cd-label {
-  color: #000;
+  color: #4cbbbd;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;

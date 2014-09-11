@@ -3,25 +3,57 @@
 <footer class="glassworks-footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-7">
-        <h6>New Orleans Glassworks & Printmaking Studio</h6>
-        <p>
-          727 Magazine Street<br />
-          New Orleans, Louisiana 70130
-        </p>
-        <p><a href="#0">+1 504 529 7279 tel</a></p>
+
+      {{! Contact }}
+      <div class="col-xs-12 col-md-4">
+        <h5 id="#contact">Contact</h5>
+        <p><strong>Email</strong><br />
+        <a href="mailto:neworleansglassworks@gmail.com">neworleansglassworks@gmail.com</a> <br />
+        <strong>Telephone</strong><br />
+        <a href="#0">+1 504 529 7279</a></p>
+        <form role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" style="margin-top:0.5em;">
+            <input type="email" class="form-control" placeholder="Email" style="margin-top:0.5em;">
+            <textarea class="form-control" rows="5" style="margin-top:0.5em;"></textarea>
+            <button type="submit" class="btn btn-default" style="margin-top:1em;">Contact</button>
+          </div>
+        </form>
       </div>
 
+      {{! Location }}
       <div class="col-xs-12 col-md-5">
-        {{! MailChimp Signup Form }}
-        <h6>Sign up to receive occasional emails.</h6>
-        <div class="input-group">
-          <input type="text" class="form-control">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">Subscribe</button>
-          </span>
-        </div><!-- /input-group -->
+        <h5 id="#location">Location</h5>
+        <p><strong>New Orleans Glassworks & Printmaking Studio</strong><br />
+          727 Magazine Street<br />
+          New Orleans, Louisiana 70130</p>
+        <p>Housed in a restored historic 1800's brick building in the American Sector, the New Orleans GlassWorks & Printmaking Studio is located on Magazine Street, between Girod and Julia Streets, less than three blocks from the St. Charles streetcar line and the National World War II Museum.</p>
       </div>
+
+      {{! Hours }}
+      <div class="col-xs-12 col-md-3">
+        <h5 id="#hours">Hours</h5>
+        <p><strong>Gallery Hours</strong></p>
+        <p>10am-5pm, Monday-Friday <br />
+        11am-5pm, Saturday <br />
+        Closed, Sunday</p>
+        <p>Hours may vary. Please inquire via our contact form before planning your visit.</p>
+      </div>
+
+      {{! Space on right }}
+      <div class="col-xs-12 col-md-1"></div>
+
     </div>
   </div>
 </footer>
+
+{{!--
+  {{! MailChimp Signup Form }}
+  <h6>Sign up to receive occasional emails.</h6>
+  <div class="input-group">
+    <input type="text" class="form-control">
+    <span class="input-group-btn">
+      <button class="btn btn-default" type="button">Subscribe</button>
+    </span>
+  </div><!-- /input-group -->
+--}}

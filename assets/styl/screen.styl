@@ -1,33 +1,35 @@
-
+@import url(http://fonts.googleapis.com/css?family=Vidaloka)
+@import url(http://fonts.googleapis.com/css?family=Playfair\+Display)
+@import url(http://fonts.googleapis.com/css?family=Droid\+Serif:400,700,400italic,700italic)
+@import url(http://fonts.googleapis.com/css?family=Merriweather\+Sans:400,300,700,300italic,400italic)
 @import url(http://fonts.googleapis.com/css?family=Open\+Sans)
-@import url(http://fonts.googleapis.com/css?family=Questrial)
-@import url(http://fonts.googleapis.com/css?family=Lora)
+
 
 /* Variables : Colors
 ================================================== */
-glassworks-black  = #000000
-glassworks-white  = #FFFFFF
-glassworks-hot    = #FF9E9D
-glassworks-warm   = #FF3D7F
-glassworks-cold   = #3FB8AF
-glassworks-cool   = #7FC7AF
-leshalles-pink    = #E5007C
-leshalles-blue    = #00AECA
-leshalles-green   = #AECA00
-// bentley-red       = #F40034
-bentley-red       = leshalles-pink
 
+glassworks-black    = rgba(0, 0, 0, 1)
+glassworks-charcoal = rgba(34, 34, 34, 1)
+glassworks-grey     = rgba(153, 153, 153, 1)
+glassworks-white    = rgba(255, 255, 255, 1)
 
-glassworks-hot-light  = rgba(255, 61, 127, 0.96)
+glassworks-navy   = rgba(34, 76, 122, 1)
+glassworks-blue   = rgba(58, 129, 207, 1)
+glassworks-teal   = rgba(76, 187, 189, 1)
+glassworks-purple = rgba(141, 96, 209, 1)
+glassworks-pink   = rgba(255, 70, 183, 1)
 
-/* Variables : Elements
-================================================== */
-glassworks-border-top-color   = leshalles-blue
+// Hacks
+leshalles-pink    = glassworks-pink
+leshalles-blue    = glassworks-blue
+leshalles-green   = glassworks-teal
+
 
 /* Variables : Typography
 ================================================== */
-glassworks-sans       = "Proxima-Nova", "Helvetica Neue", "Helvetica", sans-serif
-glassworks-serif      = "FF-Meta-Serif-Web-Pro", "Lora", "Georgia", serif
+glassworks-sans       = "Merriweather Sans", "Helvetica Neue", "Helvetica", sans-serif
+glassworks-serif      = "Droid Serif", "Georgia", serif
+glassworks-display    = "Vidaloka", "Georgia", serif
 
 /* Reset & Basics (Inspired by E. Meyers)
 ================================================== */
@@ -122,8 +124,8 @@ body
 
 body
   overflow-x: hidden
-  font: 17px/28px ff-meta-serif-web-pro, "Lora", "Georgia", serif
-  color: #333
+  font: 21px/30px glassworks-serif
+  color: glassworks-charcoal
   background: glassworks-white
 
 /* Typography
@@ -134,16 +136,15 @@ h3,
 h4,
 h5,
 h6
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif
-  font-weight: normal
-  text-transform: uppercase
+  font-family: glassworks-sans
   font-weight: 700
-  color: #000
+  color: glassworks-black
   text-rendering: optimizeLegibility
 
 h1
   font-size: 50px
   padding-bottom: 30px
+  text-transform: uppercase
 
 h2
   font-size: 45px
@@ -160,6 +161,11 @@ h4
 h5
   font-size: 30px
   padding-bottom: 10px
+
+h6
+  font-size: 18px
+  padding-bottom: 5px
+  text-transform: uppercase
 
 p
   margin: 0 0 28px 0
@@ -191,20 +197,17 @@ header#teaser h1
 /* Links
 ================================================== */
 a
-  color: bentley-red
+  color: glassworks-pink
   text-decoration: none
   -webkit-transition: color .2s ease-in-out
   -moz-transition: color .2s ease-in-out
   transition: color .2s ease-in-out
 
 a:hover
-  color: bentley-red
+  color: glassworks-pink
 
 /*  Layout
 ================================================== */
-header
-  border-top: glassworks-border-top-color solid 9px
-
 /* White container that is the "page" */
 .wrapper
 /*  max-width: 1500px */
@@ -277,11 +280,13 @@ nav
   height: 30px
   margin-left: 0px
   letter-spacing: 1px
-  font-family: 'Questrial', sans-serif
+  font-family: glassworks-display
   font-size: 30px
+  text-transform: none
+  font-weight: normal
 
 #logo h1 span
-  color: bentley-red !important
+  color: glassworks-pink !important
 
 .nav li:first-child
   margin-left: 0
@@ -314,13 +319,14 @@ div.cover > img
   background-position: top center
   background-attachment: fixed
   overflow: hidden
-  background-color: leshalles-blue
+  background-color: glassworks-white
   z-index: 10
 
 .art-header-overlay
-  background: url('../img/overlay.png') repeat-x;
+  background: url('../img/resonance-overlay.png') repeat-x;
   display: block;
-  min-height: 900px;
+  min-height: 100%
+  max-height: 900px
   width: 100%;
 
 /* Contains the time, title and subtitle for an article */
@@ -374,8 +380,8 @@ div.cover > img
   box-shadow: 0 -3px 3px rgba(0,0,0,.2)
 
 .art-body-inner
-  font-family: "Lora", "Cambria", "Georgia", serif
-  max-width: 640px
+  font-family: glassworks-serif
+  max-width: 960px // [default] 640px
   padding: 80px 0 50px
   letter-spacing: 0.01rem
   font-weight: 400
@@ -384,7 +390,7 @@ div.cover > img
   line-height: 1.5
 
 .art-body-inner a:hover
-  border-bottom: 1px solid bentley-red
+  border-bottom: 1px solid glassworks-pink
   padding-bottom: 2px
 
 .art-body-inner ul,
@@ -484,7 +490,7 @@ div.cover > img
 
 .art-list-title
   font-size: 26px
-  line-height: 26px
+  line-height: 30px
   font-weight: 700
 
 .art-list-item-title-and-time
@@ -504,7 +510,7 @@ div.cover > img
   color: #000
 
 .art-list-title a:hover
-  color: bentley-red
+  color: glassworks-pink
 
 .art-list-item p
   width: 65%
@@ -573,21 +579,34 @@ a
 /*  Glassworks Footer
 ================================================== */
 .glassworks-footer
-  background-color: leshalles-blue
+  background-color: glassworks-navy
   padding: 30px 0 24px
   overflow: hidden
-  border-top: leshalles-pink solid 6px
 
-.glassworks-footer h6,
-.glassworks-footer p
+.glassworks-footer p,
+.glassworks-footer h5,
+.glassworks-footer a
+  font-family: glassworks-sans
+  font-weight: 300
+
+.glassworks-footer p,
+.glassworks-footer h5
   color: glassworks-white
 
 .glassworks-footer a
-  color: glassworks-black
+  color: glassworks-teal
+
+.glassworks-footer h5,
+.glassworks-footer strong,
+.glassworks-footer a:hover
+  font-weight: 400
 
 .glassworks-footer a:hover
-  color: leshalles-pink
-  text-decoration: underline
+  color: glassworks-pink
+  border-bottom: glassworks-pink solid 2px
+
+.glassworks-footer h5
+  text-transform: uppercase
 
 /*  Copyright
 ================================================== */
@@ -599,13 +618,13 @@ a
 
 .copyright,
 .copyright a
-  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif
+  font-family: glassworks-sans
   font-size: 13px
   text-transform: uppercase
   color: glassworks-white
 
 .copyright a:hover
-  color: leshalles-pink
+  color: glassworks-pink
 
 .back-to-top,
 .copyright-nav,
@@ -631,13 +650,13 @@ a
   color: leshalles-green
 
 .copyright .github-link:hover
-  color: #c5376d
+  color: glassworks-teal
 
 .copyright .caffein8-link:hover
-  color: black
+  color: glassworks-black
 
 .copyright .rss-link:hover
-  color: bentley-red
+  color: glassworks-pink
 
 /* Remove prev & next links on loop */
 .art-list + .copyright .copyright-nav,
@@ -650,13 +669,13 @@ a
 
 /* Nav */
 .nav.white
-  border-bottom-color: #fff
+  border-bottom-color: glassworks-white
   border-bottom-color: rgba(255,255,255,.3)
 
 .nav.white li a,
 .nav.white li,
 .nav.white #logo h1
-  color: #fff
+  color: glassworks-white
   text-shadow: 0 0 8px rgba(0,0,0,.5)
 
 .nav.white #logo h1
@@ -673,7 +692,7 @@ nav.pagination
 .art-header.white .art-time,
 .art-header.white .art-title,
 .art-header.white .art-subtitle
-  color: #fff
+  color: glassworks-white
   text-shadow: 0 0 8px rgba(0,0,0,.5)
 
 /*  About page
@@ -801,6 +820,11 @@ tt
     background-size: cover !important
     background-attachment: scroll
 
+  /* Psychopomp added top and bottom padding, which for whatever reason fixed a serious glitch; verify */
+  .art-header-overlay
+    padding-top: 1%
+    padding-bottom: 1%
+
   /* Remove bottom space out if articles doesn't have a background */
   .simple .art-header
     padding-bottom: 0
@@ -900,11 +924,11 @@ tt
 /*  Misc
 ================================================== */
 ::selection
-  background: #000
+  background: glassworks-navy
   color: #fff
 
 ::-moz-selection
-  background: #000
+  background: glassworks-navy
   color: #fff
 
 img.left
